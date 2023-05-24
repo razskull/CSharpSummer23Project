@@ -18,7 +18,8 @@ namespace App.PracticePanther// Note: actual namespace depends on the project na
                 Console.WriteLine("1. Add Client");
                 Console.WriteLine("2. Print List");
                 Console.WriteLine("3. Update List");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Delete Client");
+                Console.WriteLine("5. Exit");
                 var input = Console.ReadLine();
                 if (int.TryParse(input, out int result))
                 {
@@ -32,7 +33,10 @@ namespace App.PracticePanther// Note: actual namespace depends on the project na
                     }else if(result == 3)
                     {
                         clientHelper.UpdateClients();
-                    }else if( result == 4)
+                    }else if(result == 4)
+                    {
+                        clientHelper.DeleteClient();
+                    }else if( result == 5)
                     {
                         cont = false;
                     }

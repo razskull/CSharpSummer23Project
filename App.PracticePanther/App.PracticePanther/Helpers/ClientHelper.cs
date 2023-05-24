@@ -90,5 +90,22 @@ namespace App.PracticePanther.Helpers
                 }
             }
         }
+
+        public void DeleteClient()
+        {
+            Console.WriteLine("Select a client to delete:");
+            Read();
+
+            var selectClient = Console.ReadLine();
+
+            if (int.TryParse(selectClient, out int selectInt))
+            {
+                var selectedClient = clientService.Clients.FirstOrDefault(s => s.Id == selectInt);
+                if (selectedClient != null)
+                {
+                    clientService.Delete(selectedClient);
+                }
+            }
+        }
     }
 }
