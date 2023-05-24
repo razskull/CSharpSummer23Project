@@ -24,11 +24,5 @@ namespace App.PracticePanther.Models
 
         public int ClientId { get; set; }
 
-        public Project(){
-            Name = string.Empty;
-            ShortName = string.Empty;
-            LongName = string.Empty;
-        }
-
     }
 }
