@@ -17,7 +17,8 @@ namespace App.PracticePanther// Note: actual namespace depends on the project na
                 Console.WriteLine("Choose an Action:");
                 Console.WriteLine("1. Add Client");
                 Console.WriteLine("2. Print List");
-                Console.WriteLine("3. Exit");
+                Console.WriteLine("3. Update List");
+                Console.WriteLine("4. Exit");
                 var input = Console.ReadLine();
                 if (int.TryParse(input, out int result))
                 {
@@ -28,7 +29,10 @@ namespace App.PracticePanther// Note: actual namespace depends on the project na
                     }else if(result == 2)
                     {
                         clientHelper.Read();
-                    }else if( result == 3)
+                    }else if(result == 3)
+                    {
+                        clientHelper.UpdateClients();
+                    }else if( result == 4)
                     {
                         cont = false;
                     }
