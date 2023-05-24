@@ -22,6 +22,12 @@ namespace App.PracticePanther.Models
 
         public Client() {
             Name = string.Empty;
+            Notes = string.Empty;
+        }
+
+        public override string ToString()
+        {
+            return $"[{Id}] {Name} [{OpenDate}]-[{CloseDate}] {IsActive} {Notes}";
         }
     }
 }
