@@ -10,7 +10,6 @@ namespace App.PracticePanther// Note: actual namespace depends on the project na
         static void Main(string[] args)
         {
             var clientHelper = new ClientHelper();
-            var clientService = new ClientServices();
             bool cont = true;
 
             while (cont)
@@ -29,9 +28,10 @@ namespace App.PracticePanther// Note: actual namespace depends on the project na
                     }else if(result == 2)
                     {
                         clientHelper.Read();
+                    }else if( result == 3)
+                    {
+                        cont = false;
                     }
-                    input = Console.ReadLine();
-                    int.TryParse(input, out result);
                 }
             }
             
