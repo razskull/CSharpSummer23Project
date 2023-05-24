@@ -58,8 +58,12 @@ namespace App.PracticePanther.Helpers
             };
 
             clientService.Add(client);
+        }
 
-            clientService.clientList.ForEach(client => Console.WriteLine(client));
+        public void Read()
+        {
+            Console.WriteLine("Client List");
+            clientService.Clients.ForEach(Console.WriteLine);   
         }
     }
 }

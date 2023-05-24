@@ -20,8 +20,16 @@ namespace App.PracticePanther.Models
 
         public string Notes { get; set; }
 
-        public Client() {
+        public Client()
+        {
             Name = string.Empty;
+            Notes = string.Empty;
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {Id}\tName: {Name}\tOpen Date: {OpenDate}\tClosed Date: {CloseDate}\tCase Active? {IsActive}\tNotes: {Notes}";
         }
     }
 }
+

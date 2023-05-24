@@ -15,5 +15,18 @@ namespace App.PracticePanther.Services
         {
             clientList.Add(client);
         }
+
+        public List<Client> Clients 
+        {
+            get
+            {
+                return clientList;
+            }
+        }
+
+        public void Delete(Client client)
+        {
+            clientList.Remove(client);
+        }
     }
 }
