@@ -24,12 +24,18 @@ namespace App.PracticePanther.Models
 
         public int ClientId { get; set; }
 
+        public Client client { get; set; }
+
         public Project()
         {
             Name = string.Empty;
             ShortName = string.Empty;
             LongName = string.Empty;
+            client = client;
         }
-
+        public override string ToString()
+        {
+            return $"ID: {Id}\tName: {Name}\tOpen Date: {OpenDate}\tClosed Date: {CloseDate}\tCase Active? {IsActive}\tShort Name: {ShortName}\tLong Name: {LongName}\tClient ID: {ClientId}";
+        }
     }
 }

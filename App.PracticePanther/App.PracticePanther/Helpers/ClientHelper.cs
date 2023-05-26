@@ -11,25 +11,31 @@ namespace App.PracticePanther.Helpers
 {
     internal class ClientHelper
     {
-        private ClientServices clientService = new ClientServices();
+        private ClientServices clientService;
+
+        public ClientHelper(ClientServices csrvc)
+        {
+            clientService = csrvc;
+        }
+
         public void CreateClient(Client? selectedClient = null)
         {
             Console.WriteLine("What is the id of the client?");
             var id = Console.ReadLine();
             Console.WriteLine("What is the name of the client?");
             var name = Console.ReadLine();
-            Console.WriteLine("What is the Open Date of the client?");
+            Console.WriteLine("What is the Open Date of the client? (Insert in 'MM/DD/YYYY' format)");
             var openDate = Console.ReadLine();
             DateTime od;
-            while (!DateTime.TryParseExact(openDate, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out od))
+            while (!DateTime.TryParseExact(openDate, "MM/dd/yyyy", null, System.Globalization.DateTimeStyles.None, out od))
             {
                 Console.WriteLine("Invalid date, please retry");
                 openDate = Console.ReadLine();
             }
-            Console.WriteLine("What is the Closed Date of the client?");
+            Console.WriteLine("What is the Closed Date of the client? (Insert in 'MM/DD/YYYY' format)");
             var closedDate = Console.ReadLine();
             DateTime cd;
-            while (!DateTime.TryParseExact(closedDate, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out cd))
+            while (!DateTime.TryParseExact(closedDate, "MM/dd/yyyy", null, System.Globalization.DateTimeStyles.None, out cd))
             {
                 Console.WriteLine("Invalid date, please retry");
                 closedDate = Console.ReadLine();
